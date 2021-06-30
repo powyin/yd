@@ -68,7 +68,7 @@ gradlePlugin {
 
 uploadArchives{
     repositories.mavenDeployer{
-        repository(url: uri('E:\\ccc/repo'))
+        // repository(url: uri('E:\\ccc/repo'))
         pom.groupId = 'yd.hcmobile'
         pom.artifactId = 'supconit'
         pom.version = '1.2.1'
