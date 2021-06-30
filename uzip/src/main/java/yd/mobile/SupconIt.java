@@ -12,7 +12,7 @@ import org.gradle.process.ExecSpec;
 
 
 
-public class CCSupconIt implements Plugin<Project> {
+public class SupconIt implements Plugin<Project> {
 
 
     @Override
