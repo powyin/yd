@@ -8,15 +8,15 @@ class SupconIt implements Plugin<Project> {
     void apply(Project project) {
 
 
-        project.exec(new Closure() {
-            @Override
-            Object call() {
-                return super.call()
-            }
-        })
-
-        // project.apply from: "./plu.gradle"
-        android.defaultConfig.manifestPlaceholders.put("rc_file_path", "@xml/provider_paths")
+//        project.exec(new Closure() {
+//            @Override
+//            Object call() {
+//                return super.call()
+//            }
+//        })
+//
+//        // project.apply from: "./plu.gradle"
+////        android.defaultConfig.manifestPlaceholders.put("rc_file_path", "@xml/provider_paths")
 
     }
 }
