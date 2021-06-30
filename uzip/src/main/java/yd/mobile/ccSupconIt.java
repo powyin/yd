@@ -5,14 +5,17 @@ package yd.mobile;
 import org.gradle.api.Action;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
+import org.gradle.api.Task;
 import org.gradle.api.logging.LogLevel;
 import org.gradle.internal.impldep.com.esotericsoftware.minlog.Log;
 import org.gradle.process.ExecSpec;
 
+import java.util.Iterator;
+
+import groovy.lang.Closure;
 
 
-
-public class SupconIt implements Plugin<Project> {
+public class ccSupconIt implements Plugin<Project> {
 
 
     @Override
@@ -24,10 +27,21 @@ public class SupconIt implements Plugin<Project> {
         Plugin android = project.getPlugins().findPlugin("com.android.application");
 
 
+        Iterator<Task> iterator = project.getTasks().iterator();
+        while (iterator.hasNext()){
+            Task next = iterator.next();
+            System.out.println(next.getName());
+            project.android.defaultConfig
+            next.doFirst(new Action<Task>() {
+                @Override
+                public void execute(Task task) {
+                    task.
+                }
+            });
+        }
 
 
-
-        System.out.println("--------------------"+android);
+        System.out.println("--------------------"+ getClass().getResource("").toString());
 
 
         //   manifestreplace

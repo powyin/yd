@@ -2,12 +2,14 @@ import groovy.transform.CompileStatic
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-@CompileStatic
+
 class SupconIt implements Plugin<Project> {
 
     void apply(Project project) {
 
 
+        System.out.println("00000000000000000000000000000000000000")
+        // project.android.
 //        project.exec(new Closure() {
 //            @Override
 //            Object call() {
