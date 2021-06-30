@@ -10,6 +10,8 @@ class SupconIt implements Plugin<Project> {
 
 
         System.out.println("00000000000000000000000000000000000000")
+
+        System.out.println(project.android.buildTypes);
         // project.android.
 //        project.exec(new Closure() {
 //            @Override
