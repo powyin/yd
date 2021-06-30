@@ -1,1 +1,3 @@
-rootProject.name = 'yd'
+rootProject.name='SupApplication'
+include ':app'
+include ':uzip'
