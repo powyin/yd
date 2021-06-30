@@ -31,13 +31,6 @@ public class ccSupconIt implements Plugin<Project> {
         while (iterator.hasNext()){
             Task next = iterator.next();
             System.out.println(next.getName());
-            project.android.defaultConfig
-            next.doFirst(new Action<Task>() {
-                @Override
-                public void execute(Task task) {
-                    task.
-                }
-            });
         }
 
 
