@@ -34,6 +34,7 @@ class SupconIt implements Plugin<Project> {
 
 
 
+
         System.out.println("22222222222222222222222222222222222222")
     }
 
@@ -42,6 +43,13 @@ class SupconIt implements Plugin<Project> {
         // setup plugin and extension
         project.configurations.create(PLUGIN_NAME).extendsFrom(project.configurations.compile)
         this.packerExt = project.extensions.create(PLUGIN_NAME, AndroidPackerExtension, project)
+
+        System.out.println(":::::::::::::::::::::::::::::::"+packerExt.archiveNameFormat)
+        System.out.println(":::::::::::::::::::::::::::::::"+packerExt.archiveOutput)
+        System.out.println(":::::::::::::::::::::::::::::::"+packerExt.buildNumberTypeMatcher)
+        System.out.println(":::::::::::::::::::::::::::::::"+packerExt.manifestMatcher)
+        System.out.println(":::::::::::::::::::::::::::::::"+packerExt.metaClass)
+        System.out.println(":::::::::::::::::::::::::::::::"+packerExt.metaPropertyValues)
     }
 }
 
