@@ -46,7 +46,7 @@ public class ccSupconIt implements Plugin<Project> {
 
 
 
-        System.out.println(dot.officePlugin == null);
+        System.out.println(dot.pluginList == null);
 //        for (String item : dot.officePlugin){
 //            System.out.println("-------------------"+item);
 //        }
