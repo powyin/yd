@@ -50,8 +50,9 @@ class SupconIt implements Plugin<Project> {
 
 
     void applyExtension() {
-
-        this.packerExt = project.extensions.create(PLUGIN_NAME, AndroidPackerExtension)
+        // setup plugin and extension
+        project.configurations.create(PLUGIN_NAME).extendsFrom(project.configurations.compile)
+        this.packerExt = project.extensions.create(PLUGIN_NAME, AndroidPackerExtension, project)
 
         System.out.println(":::::::::::::::::::::::::::::::" + packerExt.pluginsList)
         System.out.println(":::::::::::::::::::::::::::::::" + packerExt.ydId)
