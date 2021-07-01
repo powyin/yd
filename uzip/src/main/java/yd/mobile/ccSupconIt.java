@@ -27,11 +27,7 @@ public class ccSupconIt implements Plugin<Project> {
         Plugin android = project.getPlugins().findPlugin("com.android.application");
 
 
-        Iterator<Task> iterator = project.getTasks().iterator();
-        while (iterator.hasNext()){
-            Task next = iterator.next();
-            System.out.println(next.getName());
-        }
+
 
 
         System.out.println("--------------------"+ getClass().getResource("").toString());
