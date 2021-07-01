@@ -12,7 +12,7 @@ class SupconIt implements Plugin<Project> {
     Properties props
     AndroidPackerExtension packerExt
 
-
+    @Override
     void apply(Project project) {
 
         this.project = project
@@ -31,12 +31,25 @@ class SupconIt implements Plugin<Project> {
 
         applyExtension();
 
+        project.afterEvaluate {
+            def buildTypes = project.android.buildTypes
+            System.out.println(buildTypes)
 
+            System.out.println(":::::::::::::::::::::::::::::::"+packerExt.archiveNameFormat)
+            System.out.println(":::::::::::::::::::::::::::::::"+packerExt.archiveOutput)
+            System.out.println(":::::::::::::::::::::::::::::::"+packerExt.buildNumberTypeMatcher)
+            System.out.println(":::::::::::::::::::::::::::::::"+packerExt.manifestMatcher)
+            System.out.println(":::::::::::::::::::::::::::::::"+packerExt.metaClass)
+            System.out.println(":::::::::::::::::::::::::::::::"+packerExt.metaPropertyValues)
+
+        }
 
 
 
         System.out.println("22222222222222222222222222222222222222")
     }
+
+
 
 
     void applyExtension() {
