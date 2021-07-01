@@ -10,8 +10,8 @@ class SupconIt implements Plugin<Project> {
 
     void apply(Project project) {
         System.out.println("00000000000000000000000000000000000000")
-        project.configurations.create('supconIt').extendsFrom(project.configurations.compile)
-        extension = project.extensions.create("supconIt", YdMode);
+      //  project.configurations.create('ydPlugins').extendsFrom(project.configurations.compile)
+        extension = project.getExtensions().create("ydPlugins", YdMode.class);
         System.out.println(extension == null)
         System.out.println(extension.pluginList == null)
         System.out.println(extension.pluginList.size())
