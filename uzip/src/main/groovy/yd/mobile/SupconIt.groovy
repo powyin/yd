@@ -9,7 +9,7 @@ class SupconIt implements Plugin<Project> {
     // YdMode extension;
     static final String PLUGIN_NAME = "yd"
     Project project
-    Properties props
+
     AndroidPackerExtension packerExt
 
     @Override
@@ -50,9 +50,8 @@ class SupconIt implements Plugin<Project> {
 
 
     void applyExtension() {
-        // setup plugin and extension
-        project.configurations.create(PLUGIN_NAME).extendsFrom(project.configurations.compile)
-        this.packerExt = project.extensions.create(PLUGIN_NAME, AndroidPackerExtension, project)
+
+        this.packerExt = project.extensions.create(PLUGIN_NAME, AndroidPackerExtension)
 
         System.out.println(":::::::::::::::::::::::::::::::" + packerExt.pluginsList)
         System.out.println(":::::::::::::::::::::::::::::::" + packerExt.ydId)
