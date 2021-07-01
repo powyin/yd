@@ -12,7 +12,7 @@ class SupconIt implements Plugin<Project> {
     Properties props
     AndroidPackerExtension packerExt
 
-    public static final ydPlugins = "ydPlugins"
+
     void apply(Project project) {
 
         this.project = project
