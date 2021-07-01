@@ -8,10 +8,11 @@ import org.gradle.api.Project
 class SupconIt implements Plugin<Project> {
     // YdMode extension;
 
+    public static final ydPlugins = "ydPlugins"
     void apply(Project project) {
         System.out.println("00000000000000000000000000000000000000")
       //  project.configurations.create('ydPlugins').extendsFrom(project.configurations.compile)
-        EnvPlugin extension = project.getExtensions().create("ydPlugins", EnvPlugin.class);
+        EnvPlugin extension = project.getExtensions().create(ydPlugins, EnvPlugin);
       //  extension = project.getExtensions().create("ydPlugins", YdMode.class);
         System.out.println(extension == null)
         System.out.println(extension.pluginList == null)
