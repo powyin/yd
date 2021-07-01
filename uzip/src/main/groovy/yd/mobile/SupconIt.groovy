@@ -16,7 +16,8 @@ class SupconIt implements Plugin<Project> {
         applyExtension();
         project.afterEvaluate {
             if (packerExt != null && packerExt.pluginsList != null && packerExt.pluginsList.size() > 0) {
-                project.android.defaultConfig.manifestPlaceholders.put("hc_mobile_plugin_list", packerExt.pluginsList)
+                project.android.defaultConfig.manifestPlaceholders.put("hc_mobile_plugin_list", packerExt.pluginsList.toListString())
+                System.out.println(packerExt.pluginsList.toListString())
             }
         }
     }
