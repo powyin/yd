@@ -6,22 +6,11 @@ import org.gradle.api.Project
 
 class AndroidPackerExtension {
 
-    File archiveOutput
+    String ydId;
+
+    List<String> pluginsList
 
 
-    String archiveNameFormat
-
-    List<String> manifestMatcher
-
-
-    boolean buildNumberAuto
-
-    List<String> buildNumberTypeMatcher
-
-
-    AndroidPackerExtension(Project project) {
-        archiveOutput = new File(project.rootProject.buildDir, "archives")
-    }
 
 
 }
