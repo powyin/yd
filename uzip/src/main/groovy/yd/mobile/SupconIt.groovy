@@ -3,6 +3,7 @@ package yd.mobile;
 import groovy.transform.CompileStatic
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.ProjectConfigurationException
 
 
 class SupconIt implements Plugin<Project> {
@@ -12,6 +13,9 @@ class SupconIt implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
+        if(!project.plugins.hasPlugin("com.android.application")){
+            throw new ProjectConfigurationException("the android plugin must be applied", null)
+        }
         this.project = project
         applyExtension();
         project.afterEvaluate {
@@ -19,11 +23,16 @@ class SupconIt implements Plugin<Project> {
                 project.android.defaultConfig.manifestPlaceholders.put("hc_mobile_plugin_list", packerExt.pluginsList.toListString())
                 System.out.println(packerExt.pluginsList.toListString())
             }
+            project.android.buildTypes.each {
+                it.resValue("string", "hc_mobile_plugin_list", packerExt.pluginsList.toListString())
+            }
+            if (!project.android.defaultConfig.manifestPlaceholders.containsKey("hc_origin_def")) {
+                project.android.defaultConfig.manifestPlaceholders.put("hc_origin_def", "portrait")
+            }
         }
     }
 
     void applyExtension() {
-        // setup plugin and extension
         project.configurations.create(PLUGIN_NAME).extendsFrom(project.configurations.compile)
         this.packerExt = project.extensions.create(PLUGIN_NAME, AndroidPackerExtension, project)
     }
